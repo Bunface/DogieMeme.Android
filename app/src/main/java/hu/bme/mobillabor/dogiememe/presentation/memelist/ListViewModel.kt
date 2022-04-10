@@ -1,4 +1,8 @@
 package hu.bme.mobillabor.dogiememe.presentation.memelist
 
-class ListViewModel {
+import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+
+@HiltViewModel
+class ListViewModel : ViewModel() {
 }

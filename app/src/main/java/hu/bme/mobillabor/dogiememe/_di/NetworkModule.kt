@@ -1,4 +1,10 @@
 package hu.bme.mobillabor.dogiememe._di
 
-class NetworkModule {
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+
+@Module
+@InstallIn(SingletonComponent::class)
+object NetworkModule {
 }
