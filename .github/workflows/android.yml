@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%d/%m/%YT %M %S%p')"
+        run: echo "::set-output name=date::$(date +'%d/%m/%YT %M%S%p')"
       - name: set up JDK 11
         uses: actions/setup-java@v2
         with:
@@ -42,7 +42,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }} ${{ steps.date.outputs.date }}
-          release_name: Release ${{ github.ref }} {{ steps.date.outputs.date }}
+          release_name: Release ${{ github.ref }} ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
           
