@@ -10,12 +10,10 @@ class PosterDaoTest : LocalDatabase() {
 
   private lateinit var posterDao: AppDao
 
-  @Before
   fun init() {
     posterDao = db.getDao()
   }
 
-  @Test
   fun insertAndLoadMemeListTest() {
 
   }
