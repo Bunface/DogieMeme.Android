@@ -12,7 +12,7 @@ interface AppDao {
     suspend fun updateMemeList(memeList: List<Meme>)
 
     @Query("SELECT * FROM Meme WHERE id = :id_")
-    suspend fun getMeme(id_: Long): Meme?
+    suspend fun getMeme(id_: String): Meme?
 
     @Query("SELECT * FROM Meme")
     suspend fun getMemeList(): List<Meme>
