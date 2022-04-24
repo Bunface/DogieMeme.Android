@@ -27,7 +27,9 @@ DetailsRepository, CoroutineScope{
 
             val response = networkProvider.fetchMemes()
             if(response is ApiResult.Success){
-                meme.tryEmit(response.data.first{it.id == id})
+                response.data.firstOrNull{it.id == id}?.let{
+                    meme.tryEmit(it)
+                }
                 persistenceProvider.updateMemeList(response.data)
             }
         }
