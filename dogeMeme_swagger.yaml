@@ -1,0 +1,68 @@
+swagger: "2.0"
+info:
+  description: "This is a part of the imgflip API used for my Mobile Development Lab homework DogeMeme."
+  version: "1.0.0"
+  title: "DogeMeme API"
+host: "api.imgflip.com"
+basePath: "/"
+tags:
+- name: "meme list"
+schemes:
+- "https"
+- "http"
+paths:
+  /get_memes:
+    get:
+      tags:
+      - "meme list"
+      summary: "Get list of memes"
+      description: ""
+      operationId: "getMemes"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+              $ref: "#/definitions/MemeListResponseDto"
+definitions:
+  MemeDto:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+        example: "0"
+      name:
+        type: "string"
+        example: "Meme Template"
+      url:
+        type: "string"
+        example: "https://i.imgflip.com/26am.jpg"
+      width:
+        type: "integer"
+        format: "int32"
+        example: "666"
+      height:
+        type: "integer"
+        format: "int32"
+        example: "666"
+      box_count:
+        type: "integer"
+        format: "int32"
+        example: "2"
+      
+  MemeListDto:
+    type: "object"
+    properties:
+      memes:
+        type: "array"
+        items:
+          $ref: "#/definitions/MemeDto"
+          
+  MemeListResponseDto:
+    type: "object"
+    properties:
+      succes:
+        type: "boolean"
+      data:
+        $ref: "#/definitions/MemeListDto"
