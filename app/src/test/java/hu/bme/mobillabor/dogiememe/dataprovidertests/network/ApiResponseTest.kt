@@ -7,6 +7,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 
+@RunWith(JUnit4::class)
 class ApiResponseTest {
 
   @Test
@@ -20,7 +21,7 @@ class ApiResponseTest {
   fun success() {
     val apiResponse = ApiResult.Success(1)
     if (apiResponse is ApiResult.Success) {
-      assertThat(apiResponse.data, `is`("foo"))
+      assertThat(apiResponse.data, `is`(1))
     }
   }
 }
