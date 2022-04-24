@@ -16,7 +16,7 @@ class PosterDaoTest : LocalDatabase() {
   }
 
   @Test
-  fun insertAndLoadMemeListTest() = runBlocking {
+  fun insertAndLoadMemeListTest() {
 
   }
 }
