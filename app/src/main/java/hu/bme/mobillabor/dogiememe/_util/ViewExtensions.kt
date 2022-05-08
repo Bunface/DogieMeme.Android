@@ -28,12 +28,21 @@ fun View.invisible() {
     }
 }
 
-fun ImageView.loadUrl(url: String?){
+fun ImageView.loadUrlCropCenter(url: String?){
     url?.let{
         Glide
             .with(context)
             .load(url)
             .centerCrop()
+            .into(this)
+    }
+}
+
+fun ImageView.loadUrl(url: String?){
+    url?.let{
+        Glide
+            .with(context)
+            .load(url)
             .into(this)
     }
 }

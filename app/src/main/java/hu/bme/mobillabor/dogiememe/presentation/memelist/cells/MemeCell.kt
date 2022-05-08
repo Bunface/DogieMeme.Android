@@ -1,9 +1,8 @@
 package hu.bme.mobillabor.dogiememe.presentation.memelist.cells
 
-import android.view.View
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import hu.bitraptors.recyclerview.genericlist.GenericListItem
-import hu.bme.mobillabor.dogiememe._util.loadUrl
+import hu.bme.mobillabor.dogiememe._util.loadUrlCropCenter
 import hu.bme.mobillabor.dogiememe.databinding.CellMemeBinding
 import hu.bme.mobillabor.dogiememe.model.Meme
 import hu.bme.mobillabor.dogiememe.presentation.baseclasses.UIAction
@@ -28,7 +27,7 @@ class MemeCell (val meme: Meme) : GenericListItem {
                     bind{
                         binding.apply {
                             memeTitle.text = item.meme.title
-                            memeImage.loadUrl(item.meme.imageUrl)
+                            memeImage.loadUrlCropCenter(item.meme.imageUrl)
                         }
                     }
                     binding.apply {

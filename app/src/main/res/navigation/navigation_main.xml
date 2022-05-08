@@ -8,18 +8,21 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="hu.bme.mobillabor.dogiememe.presentation.memelist.ListFragment"
-        app:popUpToInclusive="true">
+        app:popUpToInclusive="false">
         <action
             android:id="@+id/to_detailFragment"
             app:destination="@id/detailFragment"
             app:popUpTo="@id/listFragment"
-            />
+            app:popUpToInclusive="false"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/dissapear"
+            app:popEnterAnim="@anim/appear"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="hu.bme.mobillabor.dogiememe.presentation.memedetail.DetailsFragment"
-        app:popUpToInclusive="false">
+        android:name="hu.bme.mobillabor.dogiememe.presentation.memedetail.DetailsFragment">
         <argument
             android:name="memeId"
             android:defaultValue="0"

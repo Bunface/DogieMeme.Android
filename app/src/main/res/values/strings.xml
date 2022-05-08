@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DogeMeme</string>
     <string name="list_fragment_title">DogeMeme</string>
+    <string name="copy_link">Copy link</string>
 </resources>

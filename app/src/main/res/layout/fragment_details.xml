@@ -7,17 +7,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="@dimen/header_height"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-    </ScrollView>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:background="@color/fragment_bg_accent"
@@ -28,11 +17,14 @@
         android:id="@+id/meme_header">
 
         <ImageView
+            android:id="@+id/back_button"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:src="@drawable/ic_chevron"
-            android:padding="@dimen/spacing_8"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="@dimen/spacing_16"
+            android:background="?selectableItemBackground"
+            android:rotation="90"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/transparent" />
@@ -43,10 +35,63 @@
             android:layout_height="wrap_content"
             style="@style/TextAppearance.MaterialComponents.Headline6"
             android:text="@string/list_fragment_title"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/back_button"
+            app:layout_constraintTop_toTopOf="@id/back_button"
+            app:layout_constraintBottom_toBottomOf="@id/back_button"
+            android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="@dimen/spacing_8"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            android:ellipsize="end"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/meme_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/meme_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:src="@raw/tools_test_meme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+
+            android:id="@+id/meme_creator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="created by doge"
+            android:layout_marginEnd="@dimen/spacing_8"
+            app:layout_constraintTop_toBottomOf="@id/meme_image"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/meme_link_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_doge2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/meme_creator"
+                android:layout_marginTop="@dimen/spacing_16"
+                android:text="@string/copy_link"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/spacing_32"
+            />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
