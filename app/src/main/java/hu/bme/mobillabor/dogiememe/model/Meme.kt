@@ -21,21 +21,21 @@ fun getMemeTestList(): List<Meme>{
             id = "Meme1",
             title = "Meme funny",
             imageUrl = "www.meme.hu",
-            creator = null,
+            creator = "Hello",
             redditLink = "ww.meme.hu"
         ),
         Meme(
-            id = "Meme1",
+            id = "Meme2",
             title = "Meme funny",
             imageUrl = "www.meme.hu",
-            creator = null,
+            creator = "Hello",
             redditLink = "ww.meme.hu"
         ),
         Meme(
-            id = "Meme1",
+            id = "Meme3",
             title = "Meme funny",
             imageUrl = "www.meme.hu",
-            creator = null,
+            creator = "Hello",
             redditLink = "ww.meme.hu"
         ),
     )
