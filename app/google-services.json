@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1043653800490",
+    "project_id": "dogememe-fa180",
+    "storage_bucket": "dogememe-fa180.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043653800490:android:76930a3be536febf890953",
+        "android_client_info": {
+          "package_name": "hu.bme.mobillabor.dogiememe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043653800490-shpqsop3a31ccllau1rqqvv3b95luhm9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJgb-Bq61tAhbPi_5Vly4w0fi5bMUKu3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043653800490-shpqsop3a31ccllau1rqqvv3b95luhm9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
