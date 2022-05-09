@@ -10,6 +10,9 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import hu.bitraptors.recyclerview.setupRecyclerView
 import hu.bme.mobillabor.dogiememe.R
+import hu.bme.mobillabor.dogiememe._anlytics.AnalyticsManager
+import hu.bme.mobillabor.dogiememe._anlytics.MemeDetailOpened
+import hu.bme.mobillabor.dogiememe._anlytics.MemeListOpened
 import hu.bme.mobillabor.dogiememe._util.recylerview.setUpHeaderAnim
 import hu.bme.mobillabor.dogiememe.databinding.FragmentListBinding
 import hu.bme.mobillabor.dogiememe.model.Meme
@@ -36,6 +39,7 @@ class ListFragment: Fragment() {
         refreshOnCreated()
         setUpHeaderAnim(binding.headerTitle, binding.listHeader, binding.memeRecyclerView)
         subscribeToFragmentOutputs()
+        AnalyticsManager.track(MemeListOpened(), context)
     }
 
     private fun refreshOnCreated(){
@@ -54,6 +58,7 @@ class ListFragment: Fragment() {
         viewModel.fragmentEvents.observe(viewLifecycleOwner){ output ->
             when(output){
                 is NavigateToDetail -> {
+                    AnalyticsManager.track(MemeDetailOpened(output.memeId), context)
                     findNavController().navigate(ListFragmentDirections.toDetailFragment(output.memeId))
                 }
             }
