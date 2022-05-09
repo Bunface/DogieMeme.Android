@@ -31,8 +31,6 @@ class AppDaoTest : LocalDatabase() {
 
     //dao.getMemeList() test
     val testDataPassedThroughDB = appDao.getMemeList()
-    println(testDataPassedThroughDB)
-    println(testData)
     assertThat(testDataPassedThroughDB.toString(), `is`(testData.toString()))
   }
 
