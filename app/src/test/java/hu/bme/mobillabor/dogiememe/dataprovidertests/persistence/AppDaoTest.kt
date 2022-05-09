@@ -24,7 +24,7 @@ class AppDaoTest : LocalDatabase() {
   }
 
   @Test
-  fun testDao() = runBlocking{
+  fun testDaoGetMemeList() = runBlocking{
     //dao.updateMemeList() test
     val testData = getMemeTestList()
     appDao.updateMemeList(testData)
@@ -32,9 +32,16 @@ class AppDaoTest : LocalDatabase() {
     //dao.getMemeList() test
     val testDataPassedThroughDB = appDao.getMemeList()
     assertThat(testDataPassedThroughDB.toString(), `is`(testData.toString()))
+  }
+
+  @Test
+  fun testDaoGetMeme() = runBlocking{
+    //dao.updateMemeList() test
+    val testData = getMemeTestList()
+    appDao.updateMemeList(testData)
 
     //dao.getMeme() test
     val firstTestDataFromDB = appDao.getMeme(getMemeTestListFirstId())
-    //assertThat(firstTestDataFromDB.toString(), `is`(testData.first().toString()))
+    assertThat(firstTestDataFromDB.toString(), `is`(testData.first().toString()))
   }
 }
