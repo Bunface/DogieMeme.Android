@@ -26,8 +26,8 @@ class ListRepositoryImpl(
 
             val response = networkProvider.fetchMemes()
             if(response is ApiResult.Success){
-                memeList.tryEmit(response.data)
                 persistenceProvider.updateMemeList(response.data)
+                memeList.tryEmit(response.data)
             }
         }
     }
